@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <div class="text-center">
+    <h1>美味しい料理を作ろう</h1>
+    <% unless logged_in? %>
+    <%= link_to '会員登録ボタン', signup_path, class: 'btn btn-lg btn-primary' %>
+    <% end %>
+  </div>
+</div>
+
+<p>レシピ一覧</p>
