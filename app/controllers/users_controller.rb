@@ -25,6 +25,11 @@ class UsersController < ApplicationController
     end
   end
   
+  def likes
+    @user = User.find(params[:id])
+    @likes = @user.likes_recipes.page(params[:page])
+  end
+  
   private
   
   def user_params

@@ -1,1 +1,11 @@
 <h1>カテゴリ一覧(卵料理)</h1>
+<% @recipes.each do |eggrecipe| %>
+  <div class="row">
+    <div class="eggrecipe">
+      <div class="col-md-10 col-sm-4 col-xs-12">
+        <%= eggrecipe.title %>
+        <img src="<%= eggrecipe %>" alt="" >
+      </div>
+    </div>
+  </div>
+<% end %>
