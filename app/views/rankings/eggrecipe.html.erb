@@ -1,10 +1,11 @@
-<h1>カテゴリ一覧(卵料理)</h1>
+<div class="text-center">
+ <h1>卵料理ランキング</h1>
+</div>
 <% @recipes.each do |eggrecipe| %>
   <div class="row">
     <div class="eggrecipe">
-      <div class="col-md-10 col-sm-4 col-xs-12">
-        <%= eggrecipe.title %>
-        <img src="<%= eggrecipe %>" alt="" >
+      <div class="text-center">
+        <h3><%=  eggrecipe.title %></h3>
       </div>
     </div>
   </div>

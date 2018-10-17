@@ -1,11 +1,14 @@
-<h1>カテゴリ一覧(人気メニュー)</h1>
+<div class="text-center">
+<h1>人気メニューランキング</h1>
+</div>
 <% @recipes.each do |popular_recipe| %>
-  <div class="row">
-    <div class="popular_recipe">
-      <div class="col-md-10 col-sm-10 col-xs-12">
-        <%= popular_recipe.title %>
-        <img src="<%= popular_recipe %>" alt="" >
+ <div class="row">
+   <div class="popular_recipe">
+     <div class="text-center">
+       <h3><%=  popular_recipe.name %></h3>
       </div>
     </div>
   </div>
 <% end %>
+
+
