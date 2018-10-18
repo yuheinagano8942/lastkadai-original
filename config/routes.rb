@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   get 'rankings/eggrecipe', to: 'rankings#eggrecipe'
   get 'rankings/ricerecipe', to: 'rankings#ricerecipe'
   
+
+
   get 'signup', to: 'users#new'
   resources :users, only: [:index, :show, :new, :create]
   resources :likes, only: [:create, :destroy]
+  resources :recipes
 end

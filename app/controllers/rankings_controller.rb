@@ -3,18 +3,28 @@ class RankingsController < ApplicationController
     @recipes = []
     results = RakutenWebService::Recipe.ranking("30")
     results.each do |result|
-      recipe = Recipe.new(read(result))
+      recipe = Recipe.find_or_create_by(read(result))
       @recipes << recipe
     end
   end
   
   def ricerecipe
-     @recipes = RakutenWebService::Recipe.ranking("14")
+    @recipes = []
+     results = RakutenWebService::Recipe.ranking("14")
+     results.each do |result|
+      recipe = Recipe.find_or_create_by(read(result))
+      @recipes << recipe
+    end
   end
 
   
   def eggrecipe
-    @recipes = RakutenWebService::Recipe.ranking("33")
+    @recipes = []
+    results = RakutenWebService::Recipe.ranking("33")
+    results.each do |result|
+      recipe = Recipe.find_or_create_by(read(result))
+      @recipes << recipe
+    end
   end
   
   private
