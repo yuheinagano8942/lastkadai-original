@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'rankings/ricerecipe', to: 'rankings#ricerecipe'
   get 'rankings/fishrecipe', to: 'rankings#fishrecipe'
   get 'rankings/meatrecipe', to: 'rankings#meatrecipe'
+  get 'rankings/pastarecipe', to: 'rankings#pastarecipe'
   
 
 

@@ -45,6 +45,15 @@ class RankingsController < ApplicationController
     end
   end
   
+  def pastarecipe
+  @recipes = []
+    results = RakutenWebService::Recipe.ranking("15")
+    results.each do |result|
+      recipe = Recipe.find_or_create_by(read(result))
+      @recipes << recipe
+    end
+  end
+  
   
   private
   

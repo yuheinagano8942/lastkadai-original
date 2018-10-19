@@ -1,0 +1,12 @@
+<div class="text-center">
+<h1>パスタランキング</h1>
+</div>
+<% @recipes.each do |pastarecipe| %>
+ <div class="row">
+   <div class="pastarecipe">
+     <div class="text-center">
+      <h3><%= link_to pastarecipe.name, pastarecipe %></h3>
+      </div>
+    </div>
+  </div>
+<% end %>
