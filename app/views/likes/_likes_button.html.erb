@@ -1,0 +1,11 @@
+<% if current_user.like?(@recipe) %>
+ <%= form_for(current_user.likes.find_by(recipe_id: recipe_id), html: { method: :delete }) do |f| %>
+   <%= hidden_field_tag @recipe %>
+   <%= f.submit 'お気に入り解除', class: 'btn btn-warning btn-xs' %>
+  <% end %>
+ <% else %>
+   <%= form_for(current_user.likes.build) do |f| %>
+    <%= hidden_field_tag @recipe %>
+    <%= f.submit 'お気に入りボタン', class: 'btn btn-primary btn' %>
+   <% end %>
+ <% end %>

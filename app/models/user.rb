@@ -7,7 +7,8 @@ class User < ApplicationRecord
   has_secure_password
   
   has_many :likes
-  has_many :likes_recipes, through: :likes, source: :recipes
+  has_many :likes_recipes, through: :likes, source: :recipe
+  
   
   def like(recipe)
     self.likes.find_or_create_by(recipe_id: recipe.id)

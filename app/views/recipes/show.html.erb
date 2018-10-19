@@ -6,5 +6,5 @@
 </div>
 <h1 class="text-center"><%= link_to 'レシピ詳細ページへ', @recipe.url, target: '_blank' %></h1>
 <div class="text-center">
- <button type="button" class="btn btn-primary">お気に入りボタン</button>
+ <%= render 'likes/likes_button', likes: @likes %>
 </div>
