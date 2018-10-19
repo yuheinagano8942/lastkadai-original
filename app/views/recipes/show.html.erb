@@ -1,4 +1,10 @@
 <div class="text-center">
   <h1><%= @recipe.name %></h1>
 </div>
-
+<div class="center">
+  <img src="<%= @recipe.image_url %>" alt="" class="img-responsive center-block" width="200" height="200">
+</div>
+<h1 class="text-center"><%= link_to 'レシピ詳細ページへ', @recipe.url, target: '_blank' %></h1>
+<div class="text-center">
+ <button type="button" class="btn btn-primary">お気に入りボタン</button>
+</div>

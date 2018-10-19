@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'rankings/popular_recipe', to: 'rankings#popular_recipe'
   get 'rankings/eggrecipe', to: 'rankings#eggrecipe'
   get 'rankings/ricerecipe', to: 'rankings#ricerecipe'
+  get 'rankings/fishrecipe', to: 'rankings#fishrecipe'
+  get 'rankings/meatrecipe', to: 'rankings#meatrecipe'
   
 
 

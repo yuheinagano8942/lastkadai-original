@@ -5,8 +5,7 @@ class CreateRecipes < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :url
       t.string :image_url
-      t.datetime "created_at", null: false
-      t.datetime "update_at", null: false
+      t.timestamps
     end
   end
 end

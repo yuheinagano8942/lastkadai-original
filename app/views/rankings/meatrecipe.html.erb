@@ -1,0 +1,12 @@
+<div class="text-center">
+  <h1>定番の肉料理ランキング</h1>
+</div>
+<% @recipes.each do |meatrecipe| %>
+  <div class="row">
+    <div class="meatrecipe">
+      <div class="text-center">
+        <h3><%= link_to meatrecipe.name, meatrecipe %></h3>
+      </div>
+    </div>
+  </div>
+<% end %>

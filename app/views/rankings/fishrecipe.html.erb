@@ -1,0 +1,12 @@
+<div class="text-center">
+  <h1>定番の魚料理ランキング</h1>
+</div>
+<% @recipes.each do |fishrecipe| %>
+  <div class="row">
+    <div class="fishrecipe">
+      <div class="text-center">
+        <h3><%= link_to fishrecipe.name, fishrecipe %></h3>
+      </div>
+    </div>
+  </div>
+<% end %>

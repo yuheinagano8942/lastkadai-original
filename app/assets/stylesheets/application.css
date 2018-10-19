@@ -23,3 +23,7 @@ p.item-title {
   overflow: hidden;
 }
 
+img.recipe.image_url{
+width: 96px;
+height: 65px;
+}

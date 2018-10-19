@@ -16,6 +16,24 @@ class RankingsController < ApplicationController
       @recipes << recipe
     end
   end
+  
+  def fishrecipe
+    @recipes = []
+    results = RakutenWebService::Recipe.ranking("32")
+    results.each do |result|
+      recipe = Recipe.find_or_create_by(read(result))
+      @recipes << recipe
+    end
+  end
+  
+  def meatrecipe
+    @recipes = []
+    results = RakutenWebService::Recipe.ranking("31")
+    results.each do |result|
+      recipe = Recipe.find_or_create_by(read(result))
+      @recipes << recipe
+    end
+  end
 
   
   def eggrecipe
@@ -27,13 +45,14 @@ class RankingsController < ApplicationController
     end
   end
   
+  
   private
   
   def read(result)
     code = result['recipeId']
     name = result['recipeTitle']
     url = result['recipeUrl']
-    image_url = result['mediumImageUrl']
+    image_url = result['foodImageUrl']
     
     {
       code: code,
