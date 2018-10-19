@@ -25,9 +25,12 @@ class UsersController < ApplicationController
     end
   end
   
-  def likes
+  def destroy
     @user = User.find(params[:id])
-    @likes = @user.likes_recipes.page(params[:page])
+    @user.destroy
+    session[:user_id] = nil
+    flash[:success] = 'ユーザを退会しました'
+    redirect_to users_url
   end
   
   private
