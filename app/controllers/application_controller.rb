@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
   
   def counts(user)
-    @count_recipes = user.recipes.count
+    @count_likes = user.likes_recipes.count
   end
 
   def require_user_logged_in

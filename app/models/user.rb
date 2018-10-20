@@ -6,8 +6,8 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   
-  has_many :likes
-  has_many :likes_recipes, through: :likes, source: :recipe
+  has_many :likes, dependent: :destroy
+  has_many :likes_recipes, through: :likes, source: :recipe, dependent: :destroy
   
   
   def like(recipe)
