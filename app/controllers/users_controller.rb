@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @count_likes = @user.likes.count
+    @likes_recipes = @user.likes_recipes.order('created_at DESC').page(params[:page])
     counts(@user)
   end
 
@@ -29,8 +29,7 @@ class UsersController < ApplicationController
   
   def likes
    @user = User.find(params[:id])
-   @likes = @user.likes_recipes.page(params[:page])
-   counts(@user)
+   @likes = @user.likes_rcipes.page(params[:page])
   end
   
   def destroy

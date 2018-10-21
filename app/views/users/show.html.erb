@@ -5,12 +5,20 @@
   <div class="name text-center">
     <h1><%= @user.name %></h1>
   </div>
+  <h1 class="text-center">お気に入り一覧</h1>
   <div class="text-center">
-    <ul class="nav nav-tabs nav-justified">
-     <h1>お気に入り一覧</h1>
+    <ul>
+    <% @likes_recipes.each do |likes_recipes| %>
+    <h3><%= link_to likes_recipes.name, likes_recipes %></h3>
+    <% end %>
     </ul>
+    </div>
+   </ul>
   </div>
   </div>
 </div>
+
+
+
 
 
